@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8001:8000'
+    volumes:
+      - '.:/var/www/html'
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_DATABASE=laravel
+      - DB_USERNAME=root
+      - DB_PASSWORD=secret
+    networks:
+      - laravel-network
+  db:
+    image: 'mysql:5.7'
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: secret
+    volumes:
+      - 'mysql_data:/var/lib/mysql'
+    ports:
+      - '3306:3306'
+    networks:
+      - laravel-network
+  composer:
+    image: 'composer:2.5'
+    volumes:
+      - './:/app'
+    working_dir: /app
+    command: composer install --ignore-platform-reqs --no-interaction
+    networks:
+      - laravel-network
+volumes:
+  mysql_data: null
+networks:
+  laravel-network:
+    driver: bridge

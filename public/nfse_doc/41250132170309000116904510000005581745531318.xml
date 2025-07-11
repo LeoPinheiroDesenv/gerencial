@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<es:esConsultarLoteRpsResposta xmlns:es="http://www.equiplano.com.br/esnfs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.equiplano.com.br/esnfs esConsultarLoteRpsResposta_v01.xsd">
+  <listaNfse class="list">
+    <nfse>
+      <nrNfse>563</nrNfse>
+      <cdAutenticacao>DC6C52A9C2A33BDFAA6B7B9C41CD47FA</cdAutenticacao>
+      <dtEmissaoNfs>2025-01-07T13:32:54</dtEmissaoNfs>
+      <nrRps>558</nrRps>
+      <nrEmissorRps>1</nrEmissorRps>
+    </nfse>
+  </listaNfse>
+</es:esConsultarLoteRpsResposta>
